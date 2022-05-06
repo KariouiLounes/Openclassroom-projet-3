@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
+body, html {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth; }
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+  position: relative; }
+
+.header {
+  padding: 1.5rem;
+  box-shadow: 0 0 0.5rem black;
+  z-index: 1;
+  display: flex;
+  position: relative; }
+  .header__logo {
+    justify-content: center;
+    margin: auto; }
+
+.footer {
+  background-color: #353535; }
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem; }
+  .footer__Logo {
+    color: white;
+    font-family: "Shrikhand", "cursive";
+    margin: 0;
+    font-size: 1.2rem;
+    margin-bottom: 1rem; }
+  .footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+  .footer__listElt {
+    margin: 0.5rem 0; }
+    .footer__listElt:first-child {
+      margin-top: 0; }
+    .footer__listElt:last-child {
+      margin-bottom: 0; }
+  .footer__link {
+    color: white;
+    text-decoration: none; }
+    .footer__link:hover {
+      text-decoration: underline; }
+  .footer__icon {
+    width: 1.2rem;
+    margin-right: 0.5rem; }
+
+.localisation {
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem 1rem;
+  background-color: #f3f3f3;
+  font-size: 1.2rem;
+  position: relative; }
+  .localisation__icon {
+    margin-right: 1rem; }
+  .localisation__text {
+    font-weight: 700; }
+
+.explore {
+  padding: 2rem;
+  text-align: center;
+  background-color: #fafafa; }
+  .explore__subtitle {
+    font-weight: 300;
+    margin: 1.5rem 0; }
+  .explore__btn {
+    border: 0;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border-radius: 100px;
+    color: white;
+    background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+    cursor: pointer;
+    transition-duration: 0.25s;
+    box-shadow: 0.25rem 0.25rem 10px gray; }
+
+.tuto {
+  padding: 2rem 1rem; }
+  .tuto__title {
+    margin-top: 0; }
+  .tuto__steps {
+    margin: 0;
+    padding: 0;
+    counter-reset: compteListe; }
+  .tuto__step {
+    padding: 1.5rem;
+    margin: 1rem 0 1rem 0.75rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem lightgray;
+    border-radius: 1rem;
+    background-color: #f6f6f6;
+    display: flex;
+    position: relative; }
+    .tuto__step::before {
+      counter-increment: compteListe 1;
+      content: counter(compteListe) " ";
+      color: #f3f3f3;
+      background: #9356DC;
+      display: flex;
+      height: 1.5rem;
+      width: 1.5rem;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: -0.75rem; }
+  .tuto__icon {
+    margin-right: 1rem;
+    color: #7e7e7e; }
+
+.restaurants {
+  background-color: #f6f6f6;
+  padding: 2rem 1rem; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 2rem;
+  row-gap: 2rem; }
+
+.card {
+  background-color: white;
+  border-radius: 1rem;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  display: block; }
+  .card__img {
+    height: 12rem;
+    width: 100%;
+    border: transparent solid 0px;
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: none;
+    object-fit: cover; }
+  .card__promo {
+    background-color: #99E2D0;
+    color: #1b6150;
+    padding: 0.5rem;
+    border-radius: 0.125rem;
+    position: absolute;
+    top: 1rem;
+    right: 0.75rem; }
+  .card__footer {
+    padding-left: 1rem; }
+  .card__content {
+    flex: 1; }
+  .card__title {
+    margin-bottom: 2px; }
+  .card__location {
+    margin-top: 0; }

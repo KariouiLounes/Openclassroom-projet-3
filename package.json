@@ -1,0 +1,20 @@
+{
+  "name": "projet3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "node-sass":"node-sass -w public/scss -o public/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KariouiLounes/Openclassroom-projet-3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KariouiLounes/Openclassroom-projet-3/issues"
+  },
+  "homepage": "https://github.com/KariouiLounes/Openclassroom-projet-3#readme"
+}
