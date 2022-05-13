@@ -1,4 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
+@keyframes disappear {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(0); } }
+
+@keyframes ylmov {
+  to {
+    border-radius: 50% 36% 50% 50% / 49% 50% 45% 45%;
+    background-position: -2px -4px , 2px 2px , 1px 1px; } }
+
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+  100% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px); } }
+
 body, html {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -20,7 +39,8 @@ body, html {
     margin: auto; }
 
 .footer {
-  background-color: #353535; }
+  background-color: #353535;
+  padding: 1rem; }
   .footer__container {
     display: flex;
     flex-direction: column;
@@ -29,12 +49,13 @@ body, html {
     color: white;
     font-family: "Shrikhand", "cursive";
     margin: 0;
+    padding: 0px;
     font-size: 1.2rem;
     margin-bottom: 1rem; }
   .footer__list {
     list-style: none;
     padding: 0;
-    margin: 0; }
+    margin-top: 10px; }
   .footer__listElt {
     margin: 0.5rem 0; }
     .footer__listElt:first-child {
@@ -49,6 +70,66 @@ body, html {
   .footer__icon {
     width: 1.2rem;
     margin-right: 0.5rem; }
+
+.loadercontainer {
+  display: flex;
+  position: fixed;
+  height: 100vh;
+  inset: 0;
+  z-index: 25;
+  animation: disappear 1ms both 3s; }
+
+.loadercontainer::after {
+  content: '';
+  background-color: whitesmoke;
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  animation: disappear 1ms both 3s; }
+
+.loader {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  position: fixed;
+  inset: 0;
+  background: #222;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transform-origin: 170px 50px;
+  border: 4px solid #333;
+  box-shadow: 3px 4px #0003 inset, 0 0 6px #0002 inset;
+  animation: disappear 1ms both 3s;
+  justify-content: center;
+  align-items: center;
+  z-index: 50; }
+
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) skew(-15deg, 15deg) rotate(-15deg);
+  width: 55px;
+  height: 53px;
+  background: #fff;
+  background-image: radial-gradient(circle 3px, #fff6 90%, transparent 10%), radial-gradient(circle 12px, #ffc400 90%, transparent 10%), radial-gradient(circle 12px, #ffae00 100%, transparent 0);
+  background-repeat: no-repeat;
+  background-position: -4px -6px , -2px -2px , -1px -1px;
+  box-shadow: -2px -3px #0002 inset, 0 0 4px #0003 inset;
+  border-radius: 47% 36% 50% 50% / 49% 45% 42% 44%;
+  animation: ylmov 0.6s ease-in-out infinite alternate; }
+
+.loader::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 48px;
+  height: 15px;
+  width: 70px;
+  background: #222222;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 3px 0 3px #eee2 inset; }
 
 .localisation {
   display: flex;
@@ -65,21 +146,29 @@ body, html {
 .explore {
   padding: 2rem;
   text-align: center;
-  background-color: #fafafa; }
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
   .explore__subtitle {
     font-weight: 300;
     margin: 1.5rem 0; }
-  .explore__btn {
-    border: 0;
-    padding: 0.75rem 1.5rem;
-    font-weight: 500;
-    font-size: 1.1rem;
-    border-radius: 100px;
-    color: white;
-    background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
-    cursor: pointer;
-    transition-duration: 0.25s;
-    box-shadow: 0.25rem 0.25rem 10px gray; }
+
+.explore__btn {
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 100px;
+  color: white;
+  background-color: #686868;
+  background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  cursor: pointer;
+  transition-duration: 0.25s;
+  box-shadow: 0.25rem 0.25rem 10px gray; }
+  .explore__btn:hover {
+    background-color: white;
+    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.6); }
 
 .tuto {
   padding: 2rem 1rem; }
@@ -88,7 +177,14 @@ body, html {
   .tuto__steps {
     margin: 0;
     padding: 0;
-    counter-reset: compteListe; }
+    counter-reset: compteListe;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; }
+    @media (max-width: 860px) {
+      .tuto__steps {
+        flex-direction: column;
+        gap: 0; } }
   .tuto__step {
     padding: 1.5rem;
     margin: 1rem 0 1rem 0.75rem;
@@ -96,7 +192,15 @@ body, html {
     border-radius: 1rem;
     background-color: #f6f6f6;
     display: flex;
-    position: relative; }
+    position: relative;
+    flex-grow: 1; }
+    .tuto__step:hover {
+      cursor: pointer;
+      background-color: rgba(107, 0, 157, 0.1);
+      transition: 0.5s;
+      transform: translate(-5px); }
+      .tuto__step:hover .tuto__icon {
+        color: purple; }
     .tuto__step::before {
       counter-increment: compteListe 1;
       content: counter(compteListe) " ";
@@ -123,6 +227,9 @@ body, html {
   grid-template-columns: repeat(1, 1fr);
   column-gap: 2rem;
   row-gap: 2rem; }
+  @media (min-width: 860px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr); } }
 
 .card {
   background-color: white;
@@ -130,7 +237,13 @@ body, html {
   position: relative;
   text-decoration: none;
   color: inherit;
-  display: block; }
+  display: block;
+  position: relative; }
+  .card:hover {
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.2);
+    transition-duration: 1s; }
   .card__img {
     height: 12rem;
     width: 100%;
@@ -147,10 +260,27 @@ body, html {
     top: 1rem;
     right: 0.75rem; }
   .card__footer {
-    padding-left: 1rem; }
+    padding-left: 1rem;
+    display: flex; }
   .card__content {
     flex: 1; }
   .card__title {
-    margin-bottom: 2px; }
+    margin-bottom: 3px; }
   .card__location {
     margin-top: 0; }
+  .card__btn {
+    padding: 2rem 1rem 0.5rem 0; }
+  .card__heartbg {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(0deg, #9356dc, #ff79da);
+    position: absolute;
+    opacity: 0;
+    transition: all 300ms ease-in-out; }
+    .card__heartbg:hover {
+      opacity: 1;
+      transform: scale(1.1); }
+    .card__heartbg__heart:hover {
+      opacity: 0;
+      transition: all 300ms ease-in-out; }

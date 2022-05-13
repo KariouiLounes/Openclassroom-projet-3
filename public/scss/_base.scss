@@ -8,6 +8,11 @@ body, html {
   $color-tertiary: #99E2D0;
   $appPadding: 1rem;
 
+  @mixin Radcolor($opacity){
+    background-image: linear-gradient(0deg,rgba(147,86,220,$opacity),rgba(255,121,218,$opacity));
+    
+  }
+
   @mixin button($explorebtn) {
     border: 0;
     padding: 0.75rem 1.5rem;
@@ -15,10 +20,16 @@ body, html {
     font-size: 1.1rem;
     border-radius: 100px;
     color: white;
-    background-image:  linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));
+    background-color: rgb(104, 104, 104);
+    @include Radcolor(0.9);
     cursor: pointer;
     transition-duration: 0.25s;
-    box-shadow: 0.25rem 0.25rem 10px gray;}
+    box-shadow: 0.25rem 0.25rem 10px gray;
+    &:hover{
+      background-color: white;
+    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.60)
+    }
+  }
 
 
 
@@ -42,7 +53,11 @@ body, html {
 
 .footer {
     background-color: #353535;
+    padding: $appPadding;
     
+    
+    
+   
     &__container {
       display: flex;
       flex-direction: column;
@@ -53,14 +68,16 @@ body, html {
       color: white;
       font-family: "Shrikhand", "cursive";
       margin: 0;
+      padding: 0px;
       font-size: 1.2rem;
       margin-bottom: $appPadding;
     }
   
     &__list {
       list-style: none;
-      padding: 0;
-      margin: 0;
+      padding:0 ;
+      margin-top: 10px;
+
     }
   
     &__listElt {
