@@ -1,53 +1,51 @@
 # Openclassroom-projet-3
-ohmyfood
-Troisième projet du parcours "Développeur web" chez OpenClassroom. L'objectif d'intégrer puis de dynamiser une page web avec des animations CSS en utilisant le préprocesseur Sass
+<h1> Ohmyfood</h1>
+The third project in the "Web Developer" journey at OpenClassroom. The goal is to integrate and add dynamic features to a web page using CSS animations with the Sass preprocessor.
 
 ![image](https://user-images.githubusercontent.com/101889651/169243025-503c36c6-a27b-46a9-8b3f-cf3f897667ef.png)
 
 
 
 
-Objectifs:
-Développer un site proposant le menu de 4 grands restaurants parisiens.
-Permettre la réservation en ligne et la composition de menus.
-Livrables
-Pages à intégrer selon les maquettes
-Page d’accueil
-Pages de menu (x4)
-Animation
-Boutons
 
-Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir. L’ombre portée devra également être plus visible.
-À terme, les visiteurs pourront sauvegarder leurs menus préférés. Pour ça, unbouton "J’aime" en forme de cœur est présent sur la maquette. Au clic, il devra se remplir progressivement. Pour cette première version, l’effet peut être apparaître au survol au lieu du clic.
-Page d’accueil
 
-Quand l’application aura plus de menus, un “loading spinner” sera nécessaire. Sur cette maquette, nous souhaitons en avoir un aperçu. Il devra apparaître pendant 1 à 3 secondes quand on arrive sur la page d'accueil, couvrir l'intégralité de l'écran, et utiliser les animations CSS (pas de librairie). Le design de ce loader n’est pas défini,toute proposition est donc la bienvenue tant qu’elle est cohérente avec la chartegraphique du site.
-Pages de menu
+<h2> Objectives</h2>
+Develop a website featuring the menus of four renowned Parisian restaurants.
+Enable online reservations and menu composition.
+Deliverables
+Pages to integrate based on the mockups:
 
-À l’arrivée sur la page, les plats devront apparaître progressivement avec un léger décalage dans le temps. Ils pourront soit apparaître un par un, soit par groupe “Entrée”, “Plat” et “Dessert”. Un exemple de l’effet attendu est fourni.
-Le visiteur peut ajouter les plats qu'il souhaite à sa commande en cliquant dessus. Cela fait apparaître une petite coche à droite du plat. Cette coche devra coulisser dela droite vers la gauche. Pour cette première version, l’effet peut apparaître au survolau lieu du clic. Si l’intitulé du plat est trop long, il devra être rogné avec des points de suspension. Un exemple de l’effet attendu est fourni
-Technologies
-Autorisés: HTML / CSS / Sass
+<h3> Homepage </h3>
+Menu Pages (x4)
+Button Animations
+On hover, the background color of the main buttons should slightly lighten, and the drop shadow should become more pronounced. In the future, visitors will be able to save their favorite menus. For this purpose, a heart-shaped "Like" button is present on the mockup. On click, it should fill gradually. For this initial version, the effect can appear on hover instead of click.
 
-Recommandée: HTML / Sass
+<h3>Homepage</h3>
+When the application has more menus, a "loading spinner" will be necessary. In this mockup, we'd like to have a preview. It should appear for 1 to 3 seconds when arriving on the homepage, covering the entire screen, and using CSS animations (no libraries). The design of this loader is not defined; any proposal is welcome as long as it aligns with the site's visual identity.
 
-Interdit: Javascript / Frameworks CSS / Inline CSS
+<h3>Menu Pages</h3>
+Upon arriving on the page, the dishes should appear progressively with a slight time delay. They can either appear one by one or in groups (Starter, Main Course, Dessert). An example of the expected effect is provided. Visitors can add the dishes they want to order by clicking on them. This action reveals a small checkmark to the right of the dish, which should slide from right to left. For this initial version, the effect can appear on hover instead of click. If the dish name is too long, it should be truncated with ellipsis. An example of the expected effect is provided.
 
+<h3>Allowed Technologies</h3>
+HTML
+CSS
+Sass
+<h3>Recommended Technologies</h3>
+HTML
+Sass
+<h3> Prohibited Technologies</h3>
+JavaScript
+CSS Frameworks
+Inline CSS
 Notes
-Polices :
+<h3> Fonts:</h3>
 
-Logo & titres: Shrikhand
-Texte: Roboto
-Couleurs :
+Logo & Titles: Shrikhand
+Text: Roboto
+Colors:
 
-Primaire: #9356DC
-Secondaire: #FF79DA
-Tertiaire: #99E2D0
-Contraintes :
-
-Approche mobile-first: oui
-Maquette mobile : oui
-Maquette desktop : à improviser
-Validation W3C HTML : à passer, warning autorisés
-Validation W3C CSS : à passer, warning autorisés
-Compatibilité : Dernières versions de Chrome, Firefox & Safari
+Primary: #9356DC
+Secondary: #FF79DA
+Tertiary: #99E2D0
+Constraints
+Mobile-first approach: Yes
